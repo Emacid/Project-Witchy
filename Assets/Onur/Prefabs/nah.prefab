@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6822578832680485836}
   m_Layer: 6
   m_Name: nah
-  m_TagString: Untagged
+  m_TagString: PilatesBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,8 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 0}
   isPickable: 0
-  ID: 3
+  ID: 5
+  isFinalItem: 1
   prefabs:
   - {fileID: 2554482804813201848, guid: 94e9fa8abf6a8bd418e89c25aa3f0244, type: 3}
   - {fileID: 2554482804813201848, guid: 73bddb021c42c3840b76bd495f32c09a, type: 3}
-  - {fileID: 420643428058078732}
+  - {fileID: 2554482804813201848, guid: dd7646cac59f80f42909426f84af1805, type: 3}
+  - {fileID: 2554482804813201848, guid: dd7646cac59f80f42909426f84af1805, type: 3}

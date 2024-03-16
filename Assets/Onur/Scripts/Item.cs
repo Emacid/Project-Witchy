@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
     public bool isPickable = false; // Pickable olup olmadýðýný belirten bool deðiþken
     private GameObject itemSocket;
     public int ID;
+    private CraftingSystem craftingSystemScript;
+    public bool isFinalItem = false;
 
     // Prefab objeleri Unity Editörü üzerinden atanabilir hale getirmek için kullanýlýr.
     public GameObject[] prefabs;
@@ -17,6 +19,7 @@ public class Item : MonoBehaviour
     void Start()
     {
         itemSocket = GameObject.Find("ItemSocket");
+        craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
 
         // Item_Base objesinin altýndaki ilk SpriteRenderer'ý al
         SpriteRenderer spriteRenderer = GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>();
@@ -35,7 +38,7 @@ public class Item : MonoBehaviour
     {
         if (isPickable && Input.GetKeyDown(KeyCode.E))
         {
-
+            
             DestroyObjectInHand();
 
             // ID'ye göre Instantiate iþlemi gerçekleþtirilir
@@ -59,6 +62,12 @@ public class Item : MonoBehaviour
             newItem.transform.SetParent(itemSocket.transform, false);
             newItem.GetComponentInChildren<Collider>().enabled = false;
             
+            if (isFinalItem) 
+            {
+                Destroy(gameObject);
+            }
+
+
         }
     }
 

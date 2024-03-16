@@ -48,6 +48,7 @@ MonoBehaviour:
   itemSprite: {fileID: 1280567404, guid: f13a13c6821b72b46a0e1c79a8e851cf, type: 3}
   isPickable: 0
   ID: 1
+  isFinalItem: 0
   prefabs:
   - {fileID: 0}
   - {fileID: 0}

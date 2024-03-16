@@ -49,10 +49,12 @@ MonoBehaviour:
   itemSprite: {fileID: 1030359626, guid: 57bf61e088fe5a74c9af29804e195df1, type: 3}
   isPickable: 0
   ID: 1
+  isFinalItem: 0
   prefabs:
   - {fileID: 2554482804813201848, guid: 94e9fa8abf6a8bd418e89c25aa3f0244, type: 3}
   - {fileID: 2554482804813201848, guid: 73bddb021c42c3840b76bd495f32c09a, type: 3}
-  - {fileID: 420643428058078732, guid: 3199ae32019d0234cb25e18ec985176d, type: 3}
+  - {fileID: 2554482804813201848, guid: dd7646cac59f80f42909426f84af1805, type: 3}
+  - {fileID: 2554482804813201848, guid: dd7646cac59f80f42909426f84af1805, type: 3}
 --- !u!114 &-3099898411511936547
 MonoBehaviour:
   m_ObjectHideFlags: 0

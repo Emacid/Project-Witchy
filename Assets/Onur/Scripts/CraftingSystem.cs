@@ -11,11 +11,15 @@ public class CraftingSystem : MonoBehaviour
     int spawn_id = 0;
     public GameObject[] items;
 
+    public float holdThrow = 1.5f;
+    float holdTimer;
+
     private bool canCraft = false;
     private GameObject itemSocket;
     private GameObject craftingSocket_1;
     private GameObject craftingSocket_2;
     private GameObject craftingSocket_Final;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,8 @@ public class CraftingSystem : MonoBehaviour
         craftingSocket_1 = GameObject.Find("CraftingSocket_1");
         craftingSocket_2 = GameObject.Find("CraftingSocket_2");
         craftingSocket_Final = GameObject.Find("CraftingSocket_Final");
+
+        holdTimer = holdThrow;
     }
 
     // Update is called once per frame
@@ -32,10 +38,19 @@ public class CraftingSystem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Yarramý ye x3");
                 InstantiateObjects();
                 DestroyObjectInHand();
             }
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                holdTimer -= Time.deltaTime;
+                if (holdTimer < 0)
+                    //function thats being called=
+                    CleanCraftingTable();
+            }
+            else
+                holdTimer = holdThrow;
         }
     }
 
@@ -64,7 +79,7 @@ public class CraftingSystem : MonoBehaviour
     {
         if (craftingSocket_1.transform.childCount == 0)
         {
-            Debug.Log("yarramý ye x2");
+            
             Transform[] itemChildrenTransforms = itemSocket.GetComponentsInChildren<Transform>();
 
             // itemSocket'in altýndaki tüm çocuklarýn transformunu al
@@ -103,12 +118,58 @@ public class CraftingSystem : MonoBehaviour
         }
         else
         {
-            Debug.Log("yarramý ye!");
+            
         }
     }
 
+    public void CleanCraftingTable()
+    {
+        if (craftingSocket_1.transform.childCount > 0)
+        {
+            Debug.Log("CraftingSocket_1 temizlendi!");
+            CleanSocket(craftingSocket_1);
+        }
+
+        if (craftingSocket_2.transform.childCount > 0)
+        {
+            Debug.Log("CraftingSocket_2 temizlendi!");
+            CleanSocket(craftingSocket_2);
+        }
+
+        if (craftingSocket_Final.transform.childCount > 0)
+        {
+            Debug.Log("CraftingSocket_Final temizlendi!");
+            CleanSocket(craftingSocket_Final);
+        }
+    }
+
+    public void CleanIngredients()
+    {
+        if (craftingSocket_1.transform.childCount > 0)
+        {
+            Debug.Log("CraftingSocket_1 temizlendi!");
+            CleanSocket(craftingSocket_1);
+        }
+
+        if (craftingSocket_2.transform.childCount > 0)
+        {
+            Debug.Log("CraftingSocket_2 temizlendi!");
+            CleanSocket(craftingSocket_2);
+        }
+    }
+
+    private void CleanSocket(GameObject socket)
+    {
+        foreach (Transform child in socket.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
+
     private void FinalProduct(int spawn_id) 
     {
+        CleanIngredients();
         GameObject newItem;
         switch (spawn_id)
         {
