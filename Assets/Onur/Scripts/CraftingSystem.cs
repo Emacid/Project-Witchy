@@ -20,6 +20,8 @@ public class CraftingSystem : MonoBehaviour
     private GameObject craftingSocket_2;
     private GameObject craftingSocket_Final;
 
+    public GameObject craftingInfoText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,12 +61,14 @@ public class CraftingSystem : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             canCraft = true;
+            craftingInfoText.gameObject.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         canCraft = false;
+        craftingInfoText.gameObject.SetActive(false);
     }
 
     private void DestroyObjectInHand() 
