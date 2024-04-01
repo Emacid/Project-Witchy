@@ -47,12 +47,53 @@ public class Item : MonoBehaviour
             {
                 case 1:
                     newItem = Instantiate(prefabs[0], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
                     break;
                 case 2:
                     newItem = Instantiate(prefabs[1], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
                     break;
                 case 3:
                     newItem = Instantiate(prefabs[2], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 4:
+                    newItem = Instantiate(prefabs[3], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 5:
+                    newItem = Instantiate(prefabs[4], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 6:
+                    newItem = Instantiate(prefabs[5], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 7:
+                    newItem = Instantiate(prefabs[6], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 8:
+                    newItem = Instantiate(prefabs[7], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 9:
+                    newItem = Instantiate(prefabs[8], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    break;
+                case 10:
+                    newItem = Instantiate(prefabs[9], Vector3.zero, Quaternion.identity);
+                    newItem.GetComponentInChildren<Outline>().isLooking = false;
+                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
                     break;
                 default:
                     Debug.LogWarning("Unknown ID for instantiation.");
