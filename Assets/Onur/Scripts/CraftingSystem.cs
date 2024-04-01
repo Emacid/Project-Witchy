@@ -94,6 +94,7 @@ public class CraftingSystem : MonoBehaviour
                 {
                     childTransform.SetParent(craftingSocket_1.transform, false);
                     childTransform.position = craftingSocket_1.transform.position;
+                    childTransform.GetComponent<Billboarding>().enabled = true;
                     id_1 = childTransform.GetComponent<Item>().ID;
                 }
 

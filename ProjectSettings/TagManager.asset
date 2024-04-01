@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - PilatesBall
+  - Basketball
+  - Slingshot
+  - Balloon
+  - PogoStick
+  - PegLeg
+  - GlassHeels
+  - Glue
+  - BurnCream
+  - Trash
+  - Soap
   layers:
   - Default
   - TransparentFX
