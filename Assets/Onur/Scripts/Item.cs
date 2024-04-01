@@ -38,79 +38,37 @@ public class Item : MonoBehaviour
     {
         if (isPickable && Input.GetKeyDown(KeyCode.E))
         {
-            
             DestroyObjectInHand();
 
-            // ID'ye göre Instantiate iþlemi gerçekleþtirilir
-            GameObject newItem;
-            switch (ID)
+            GameObject newItem = null;
+
+            if (ID >= 1 && ID <= prefabs.Length)
             {
-                case 1:
-                    newItem = Instantiate(prefabs[0], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 2:
-                    newItem = Instantiate(prefabs[1], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 3:
-                    newItem = Instantiate(prefabs[2], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 4:
-                    newItem = Instantiate(prefabs[3], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 5:
-                    newItem = Instantiate(prefabs[4], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 6:
-                    newItem = Instantiate(prefabs[5], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 7:
-                    newItem = Instantiate(prefabs[6], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 8:
-                    newItem = Instantiate(prefabs[7], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 9:
-                    newItem = Instantiate(prefabs[8], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                case 10:
-                    newItem = Instantiate(prefabs[9], Vector3.zero, Quaternion.identity);
-                    newItem.GetComponentInChildren<Outline>().isLooking = false;
-                    newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    break;
-                default:
-                    Debug.LogWarning("Unknown ID for instantiation.");
-                    return;
+                newItem = Instantiate(prefabs[ID - 1], Vector3.zero, Quaternion.identity);
+                SetNewItemProperties(newItem);
+            }
+            else
+            {
+                Debug.LogWarning("Unknown ID for instantiation.");
+                return;
             }
 
             newItem.transform.SetParent(itemSocket.transform, false);
             newItem.GetComponentInChildren<Collider>().enabled = false;
-            
-            if (isFinalItem) 
+
+            if (isFinalItem)
             {
                 Destroy(gameObject);
             }
-
-
         }
     }
+
+    void SetNewItemProperties(GameObject newItem)
+    {
+        newItem.GetComponentInChildren<Outline>().isLooking = false;
+        newItem.GetComponentInChildren<Transform>().GetComponentInChildren<SpriteRenderer>().color = Color.white;
+    }
+
 
     private void DestroyObjectInHand()
     {

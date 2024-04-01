@@ -15,6 +15,54 @@ TagManager:
   - BurnCream
   - Trash
   - Soap
+  - FrogLeg
+  - BatWing
+  - Beads
+  - Eyeball
+  - StackOfPaper
+  - PotionBottle
+  - DigitalisPurpurea
+  - DragonScale
+  - LizardTail
+  - SkullAndBones
+  - Cloak
+  - AMonster
+  - Kite
+  - Gong
+  - Garlic
+  - Toothless
+  - BloodBag
+  - Nightstick
+  - Pills
+  - EvilEye
+  - MagicScroll
+  - CrystalBall
+  - FireBall
+  - Necklace
+  - TheThirdEye
+  - EyePatch
+  - MagnifyingGlass
+  - SunGlasses
+  - MagicWand
+  - OrigamiFrog
+  - Beer
+  - WallPaint
+  - AluminiumFoil
+  - SkeletalSystemPoster
+  - Mirror
+  - PoisonBottle
+  - Diamond
+  - HealingPotion
+  - RaiseDeadPotion
+  - Carnivorous
+  - Gasoline
+  - Ivy
+  - Acid
+  - DragonEgg
+  - Helmet
+  - Camouflage
+  - Stethoscope
+  - Calcium
   layers:
   - Default
   - TransparentFX
