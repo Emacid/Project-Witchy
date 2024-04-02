@@ -38,7 +38,7 @@ public class CraftingSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if(canCraft)
         {

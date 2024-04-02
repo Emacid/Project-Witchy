@@ -86,7 +86,7 @@ public class Item : MonoBehaviour
     }
 
 
-    private void DestroyObjectInHand()
+    public void DestroyObjectInHand()
     {
         foreach (Transform child in itemSocket.transform)
         {
