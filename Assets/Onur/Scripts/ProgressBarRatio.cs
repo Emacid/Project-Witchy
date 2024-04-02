@@ -5,18 +5,18 @@ using UnityEngine;
 public class ProgressBarRatio : MonoBehaviour
 {
 
-    public ProgressBar progressBar;
+    private MoodBarController moodBarController;
     public int moodValue = 50;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+         moodBarController = GameObject.Find("MoodBar").GetComponent<MoodBarController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        progressBar.BarValue = moodValue;
+        moodBarController.moodValue = moodValue;
     }
 }

@@ -21,7 +21,7 @@ public class Customer : MonoBehaviour
     {
         craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
 
-        progressBarRatio = GameObject.Find("ProgressBar_Adjuster").GetComponent<ProgressBarRatio>();
+        progressBarRatio = GameObject.Find("MoodBar_Adjuster").GetComponent<ProgressBarRatio>();
 
         textObject.text = customerText;
         itemSocket = GameObject.Find("ItemSocket");
