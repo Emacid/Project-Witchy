@@ -36,7 +36,21 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPickable && Input.GetKeyDown(KeyCode.E))
+        if (isPickable && Input.GetKeyDown(KeyCode.E) && isFinalItem) 
+        {
+            Debug.Log(gameObject.name + " is on players hand now! YEAH");
+
+            DestroyObjectInHand();
+
+            GameObject newItem = null;
+            spawnItemsDictionary.TryGetValue(ID, out int itemIndex);
+            newItem = Instantiate(craftingSystemScript.items[itemIndex] , Vector3.zero, Quaternion.identity);
+            SetNewItemProperties(newItem);
+            newItem.GetComponent<Billboarding>().enabled = false;
+            newItem.transform.SetParent(itemSocket.transform, false);
+            newItem.GetComponentInChildren<Collider>().enabled = false;
+        }
+        else if (isPickable && Input.GetKeyDown(KeyCode.E))
         {
             DestroyObjectInHand();
 
@@ -78,4 +92,55 @@ public class Item : MonoBehaviour
         }
     }
 
+    private Dictionary<int, int> spawnItemsDictionary = new Dictionary<int, int>()
+    {
+        { 24, 0 },
+        { 35, 1 },
+        { 57, 2 },
+        { 56129, 3 },
+        { 207555, 4 },
+        { 101, 5 },
+        { 9013, 6 },
+        { 9913, 7 },
+        { 9966, 8 },
+        { 1012, 9 },
+        { 46, 10 },
+        { 56140, 11 },
+        { 207566, 12 },
+        { 112, 13 },
+        { 9024, 14 },
+        { 9924, 15 },
+        { 9977, 16 },
+        { 1023, 17 },
+        { 90, 18 },
+        { 56162, 19 },
+        { 207588, 20 },
+        { 134, 21 },
+        { 9946, 22 },
+        { 1045, 23 },
+        { 112234, 24 },
+        { 263660, 25 },
+        { 56206, 26 },
+        { 66018, 27 },
+        { 57117, 28 },
+        { 415086, 29 },
+        { 207632, 30 },
+        { 216544, 31 },
+        { 217444, 32 },
+        { 208543, 33 },
+        { 178, 34 },
+        { 9090, 35 },
+        { 9990, 36 },
+        { 10043, 37 },
+        { 1089, 38 },
+        { 18002, 39 },
+        { 18902, 40 },
+        { 18955, 41 },
+        { 10001, 42 },
+        { 19802, 43 },
+        { 10901, 44 },
+        { 19908, 45 },
+        { 10954, 46 },
+        { 2000, 47 }
+    };
 }

@@ -1,0 +1,60 @@
+Item ID Listesi
+
+
+Kurbağa Bacağı: 12
+Yarasa Kanadı: 23
+Balon: 35
+Boncuk: 45
+Basketbol Topu: 57
+Göz Bebeği: 56117 
+Sapan: 56129
+Kağıt: 207543
+Tahta bacak: 207555
+İksir Şişesi: 89
+Camdan yapılma topuklu ayakkabı: 101
+Digitalis: 9001
+Japon Yapıştırıcısı: 9013
+Ejderha Pulu:9901
+Yanık Kremi:9913
+Kertenkele Kuyruğu: 9954
+X(TRAzH): 9966,68,9046,9999,65118,66071,217497,19855
+Kemik: 1000
+Sabun:1012
+Pelerin: 46
+Canavar: 56140
+Uçurtma: 207566
+Gong: 112
+Sarımsak: 9024
+Toothless: 9924
+Kan Torbası: 9977 
+Nightstick: 1023
+blue pill + red pill: 90
+Nazar boncuğu: 56162
+Magic scroll: 207588
+Crystal Ball: 134
+FireBall: 9946
+Kolye:1045
+The Third Eye:112234
+Göz Bandı: 263660
+Büyüteç: 56206
+Güneş Gözlüğü:66018
+Büyülü Asa:57117
+Origami Kurbağa: 415086
+Bira: 207632
+Mor Duvar Boyası: 216544
+Aliminyum Folyo: 217444
+The Skeletal System Poster: 208543
+Ayna: 178
+Zehir: 9090
+Elmas: 9990
+Healing Potion: 10043
+Raise Dead Potion: 1089
+Carnivor: 18002
+Benzin: 18902
+Sarmaşık: 18955
+Azit: 10001
+Ejderha Yumurtazı: 19802
+Helmet: 10901
+Kamuflaj: 19908
+Stetoskop: 10954
+Kalziyum Hapı: 2000

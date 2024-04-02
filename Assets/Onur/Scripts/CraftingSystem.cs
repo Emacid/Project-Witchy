@@ -172,30 +172,82 @@ public class CraftingSystem : MonoBehaviour
     }
 
 
-    private void FinalProduct(int spawn_id) 
+    private void FinalProduct(int spawn_id)
     {
         CleanIngredients();
-        GameObject newItem;
-        switch (spawn_id)
+
+        GameObject newItem = null;
+        if (spawnItemsDictionary.TryGetValue(spawn_id, out int itemIndex))
         {
-            case 1:
-                Debug.Log("nothingness");
-                break;
-            case 2:
-                Debug.Log("nothingness");
-                break;
-            case 3:
-                newItem = Instantiate(items[0], Vector3.zero, Quaternion.identity);
-                newItem.GetComponent<Transform>().SetParent(craftingSocket_Final.transform, false);
-                break;
-            case 4:
-                Debug.Log("nothingness");
-                break;
-            default:
-                Debug.LogWarning("Unknown ID for instantiation.");
-                return;
+            newItem = Instantiate(items[itemIndex], Vector3.zero, Quaternion.identity);
+            newItem.transform.SetParent(craftingSocket_Final.transform, false);
+        }
+        else if (spawn_id == 68 || spawn_id == 9046 || spawn_id == 9999 || spawn_id == 65118 || spawn_id == 66071 || spawn_id == 217497 || spawn_id == 19855)
+        {
+            newItem = Instantiate(items[8], Vector3.zero, Quaternion.identity);
+            newItem.transform.SetParent(craftingSocket_Final.transform, false);
+        }
+        else
+        {
+            throw new System.Exception("Unknown ID for instantiation.");
         }
 
+        if (newItem == null)
+        {
+            throw new System.Exception("Instantiated item is null.");
+        }
     }
+
+    private Dictionary<int, int> spawnItemsDictionary = new Dictionary<int, int>()
+    {
+        { 24, 0 },
+        { 35, 1 },
+        { 57, 2 },
+        { 56129, 3 },
+        { 207555, 4 },
+        { 101, 5 },
+        { 9013, 6 },
+        { 9913, 7 },
+        { 9966, 8 },
+        { 1012, 9 },
+        { 46, 10 },
+        { 56140, 11 },
+        { 207566, 12 },
+        { 112, 13 },
+        { 9024, 14 },
+        { 9924, 15 },
+        { 9977, 16 },
+        { 1023, 17 },
+        { 90, 18 },
+        { 56162, 19 },
+        { 207588, 20 },
+        { 134, 21 },
+        { 9946, 22 },
+        { 1045, 23 },
+        { 112234, 24 },
+        { 263660, 25 },
+        { 56206, 26 },
+        { 66018, 27 },
+        { 57117, 28 },
+        { 415086, 29 },
+        { 207632, 30 },
+        { 216544, 31 },
+        { 217444, 32 },
+        { 208543, 33 },
+        { 178, 34 },
+        { 9090, 35 },
+        { 9990, 36 },
+        { 10043, 37 },
+        { 1089, 38 },
+        { 18002, 39 },
+        { 18902, 40 },
+        { 18955, 41 },
+        { 10001, 42 },
+        { 19802, 43 },
+        { 10901, 44 },
+        { 19908, 45 },
+        { 10954, 46 },
+        { 2000, 47 }
+    };
 
 }
