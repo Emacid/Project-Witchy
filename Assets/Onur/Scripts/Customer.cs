@@ -2,6 +2,7 @@ using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class Customer : MonoBehaviour
 {
@@ -15,10 +16,21 @@ public class Customer : MonoBehaviour
     public bool inInteractableArea = false;
     private ProgressBarRatio progressBarRatio;
     private CraftingSystem craftingSystemScript;
+    private GameObject talkBubbleObject; // talk_bubble gameobjesini tutacak deðiþken
+    public float waitBeforeTalkBubbleActivation = 2.5f;
+    public float waitBeforeTalkSoundActivation = 2.5f;
 
+    private AudioSource audioSource;
+    public AudioClip PopClip;
 
     void Start()
     {
+
+        StartCoroutine(ActivateTalkBubble());
+        StartCoroutine(PopClipPlay()); 
+
+        audioSource = GetComponent<AudioSource>();
+
         craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
 
         progressBarRatio = GameObject.Find("MoodBar_Adjuster").GetComponent<ProgressBarRatio>();
@@ -50,11 +62,27 @@ public class Customer : MonoBehaviour
 
         SetCustomerData();
 
+        // talk_bubble alt öðesini bulma ve atama
+        foreach (Transform child in transform)
+        {
+            if (child.name == "talk_bubble")
+            {
+                talkBubbleObject = child.gameObject;
+                break;
+            }
+        }
+
+        // talk_bubble objesi bulunamazsa uyarý ver
+        if (talkBubbleObject == null)
+        {
+            Debug.LogWarning("talk_bubble objesi bulunamadý!");
+        }
     }
 
     private void Update()
     {
-        if(inInteractableArea && Input.GetKeyDown(KeyCode.E))
+        
+        if (inInteractableArea && Input.GetKeyDown(KeyCode.E))
         {
             CheckDesiredItem();
         }
@@ -62,13 +90,10 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Player alana girdi!");
             inInteractableArea = true;
-            
         }
     }
 
@@ -101,7 +126,7 @@ public class Customer : MonoBehaviour
         {
             Debug.Log("Mutsuz surat");
             // Mutsuz surat ekle
-            progressBarRatio.moodValue -= 10;      
+            progressBarRatio.moodValue -= 10;
         }
 
         DestroyObjectInHand();
@@ -110,9 +135,9 @@ public class Customer : MonoBehaviour
         // Oyuncuyu efektle gönder
     }
 
-    private void SetCustomerData() 
+    private void SetCustomerData()
     {
-        switch (customerID) 
+        switch (customerID)
         {
             case 0:
                 Debug.Log("I want Pilates Ball!");
@@ -120,7 +145,7 @@ public class Customer : MonoBehaviour
                 break;
             case 1:
                 Debug.Log("I want Balloon!");
-                DESIRED_ITEM_TAG = "Balloon"; 
+                DESIRED_ITEM_TAG = "Balloon";
                 break;
             case 2:
                 Debug.Log("nothingness");
@@ -142,4 +167,17 @@ public class Customer : MonoBehaviour
         }
         craftingSystemScript.isItemInHandFinal = false;
     }
+
+    private IEnumerator ActivateTalkBubble() 
+    {
+        yield return new WaitForSeconds(waitBeforeTalkBubbleActivation);
+        talkBubbleObject.gameObject.SetActive(true);
+        //audioSource.PlayOneShot(PopClip);
+    }
+    private IEnumerator PopClipPlay()
+    {
+        yield return new WaitForSeconds(waitBeforeTalkSoundActivation);
+        audioSource.PlayOneShot(PopClip);
+    }
+
 }
