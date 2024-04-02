@@ -14,10 +14,13 @@ public class Customer : MonoBehaviour
     private GameObject itemSocket;
     public bool inInteractableArea = false;
     private ProgressBarRatio progressBarRatio;
-    
+    private CraftingSystem craftingSystemScript;
+
 
     void Start()
     {
+        craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+
         progressBarRatio = GameObject.Find("ProgressBar_Adjuster").GetComponent<ProgressBarRatio>();
 
         textObject.text = customerText;
@@ -137,5 +140,6 @@ public class Customer : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        craftingSystemScript.isItemInHandFinal = false;
     }
 }

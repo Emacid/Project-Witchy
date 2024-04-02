@@ -14,13 +14,17 @@ public class CraftingSystem : MonoBehaviour
     public float holdThrow = 1.5f;
     float holdTimer;
 
+    public bool isItemInHandFinal = false;
     private bool canCraft = false;
     private GameObject itemSocket;
     private GameObject craftingSocket_1;
     private GameObject craftingSocket_2;
     private GameObject craftingSocket_Final;
+    public StressReceiver stressReceiver;
 
     public GameObject craftingInfoText;
+    public AudioSource audioSource;
+    public AudioClip errorSound;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +38,16 @@ public class CraftingSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if(canCraft)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && isItemInHandFinal) 
+            {
+                audioSource.PlayOneShot(errorSound);
+                stressReceiver.InduceStress(0.3f);
+            }
+            else if(Input.GetKeyDown(KeyCode.E))
             {
                 InstantiateObjects();
                 DestroyObjectInHand();
@@ -81,7 +90,7 @@ public class CraftingSystem : MonoBehaviour
 
     private void InstantiateObjects() 
     {
-        if (craftingSocket_1.transform.childCount == 0)
+        if (craftingSocket_1.transform.childCount == 0 && !isItemInHandFinal)
         {
             
             Transform[] itemChildrenTransforms = itemSocket.GetComponentsInChildren<Transform>();
@@ -100,6 +109,11 @@ public class CraftingSystem : MonoBehaviour
 
             }
         }
+
+        /*else if (craftingSocket_1.transform.childCount == 0 && isItemInHandFinal)
+        {
+            stressReceiver.InduceStress(0.3f);
+        }*/
 
         else if (craftingSocket_2.transform.childCount == 0) 
         {

@@ -49,8 +49,10 @@ public class Item : MonoBehaviour
             newItem.GetComponent<Billboarding>().enabled = false;
             newItem.transform.SetParent(itemSocket.transform, false);
             newItem.GetComponentInChildren<Collider>().enabled = false;
+            craftingSystemScript.isItemInHandFinal = true;
+            craftingSystemScript.CleanCraftingTable();
         }
-        else if (isPickable && Input.GetKeyDown(KeyCode.E))
+        else if (isPickable && Input.GetKeyDown(KeyCode.E) && !craftingSystemScript.isItemInHandFinal)
         {
             DestroyObjectInHand();
 
@@ -70,10 +72,10 @@ public class Item : MonoBehaviour
             newItem.transform.SetParent(itemSocket.transform, false);
             newItem.GetComponentInChildren<Collider>().enabled = false;
 
-            if (isFinalItem)
+            /*if (isFinalItem)
             {
                 Destroy(gameObject);
-            }
+            }*/
         }
     }
 
