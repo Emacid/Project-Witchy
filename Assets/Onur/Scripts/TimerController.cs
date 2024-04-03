@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
     private Image timerRadial;
-    float timeRemaining;
-    public float maxTime = 5.0f;
     private Transform timerLine;
+    private float timeRemaining;
+    private bool angryFaceCalled = false;
+
+    public float maxTime = 5.0f;
 
     // Baþlangýç konumlarý için bir Dictionary kullanacaðýz
-    Dictionary<Transform, Vector3> initialPositions = new Dictionary<Transform, Vector3>();
+    private Dictionary<Transform, Vector3> initialPositions = new Dictionary<Transform, Vector3>();
 
     // Start is called before the first frame update
     void Start()
@@ -19,16 +21,13 @@ public class TimerController : MonoBehaviour
         timerRadial = GameObject.Find("Timer").GetComponent<Image>();
         timerLine = GameObject.Find("TimerLinePivot").GetComponent<Transform>();
 
-        timeRemaining = maxTime;
-
         // Her nesnenin baþlangýç konumunu kaydet
         foreach (Transform child in transform)
         {
             initialPositions[child] = child.position;
         }
-        
-        TimeReset();
 
+        TimeReset();
     }
 
     // Update is called once per frame
@@ -43,26 +42,29 @@ public class TimerController : MonoBehaviour
             float rotationAngle = 360f * (1f - timeRemaining / maxTime); // 360 derece dönüþ
             timerLine.localRotation = Quaternion.Euler(0f, 0f, -rotationAngle); // Yelkovanýn dönüþü, burada -rotationAngle kullanýldý.
         }
-        else
+        else if (!angryFaceCalled)
         {
             Debug.Log("ZAMAN DOLDU! ÖLDÜN!");
+            FindActiveCustomerScript()?.AngryFace();
+            angryFaceCalled = true;
         }
-
-       /* // K tuþuna basýldýðýnda
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            // Her nesneyi baþlangýç konumuna geri döndür
-            foreach (KeyValuePair<Transform, Vector3> pair in initialPositions)
-            {
-                pair.Key.position = pair.Value;
-            }
-
-            // Zamaný sýfýrla
-            timeRemaining = maxTime;
-        } */
     }
 
-    private void TimeReset() 
+    public Customer FindActiveCustomerScript()
+    {
+        Customer activeCustomer = FindObjectOfType<Customer>(); // Aktif Customer scriptini bul
+
+        if (activeCustomer != null && activeCustomer.isActiveAndEnabled)
+        {
+            return activeCustomer; // Eðer script etkinse, bu scripti döndür
+        }
+        else
+        {
+            return null; // Eðer aktif bir Customer scripti bulunamazsa veya etkin deðilse, null döndür
+        }
+    }
+
+    private void TimeReset()
     {
         // Her nesneyi baþlangýç konumuna geri döndür
         foreach (KeyValuePair<Transform, Vector3> pair in initialPositions)
@@ -72,6 +74,6 @@ public class TimerController : MonoBehaviour
 
         // Zamaný sýfýrla
         timeRemaining = maxTime;
+        angryFaceCalled = false;
     }
-
 }

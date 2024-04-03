@@ -138,14 +138,7 @@ public class Customer : MonoBehaviour
 
         if (!foundDesiredItem && itemSocket.transform.childCount >= 1)
         {
-            Debug.Log("Mutsuz surat");
-            angryFace.gameObject.SetActive(true);
-            int randomIndex = Random.Range(0, angrySounds.Length); // Rastgele bir index seç
-            audioSource.PlayOneShot(angrySounds[randomIndex]); // Seçilen sesi oynat
-            angryFace.SetActive(true);
-            progressBarRatio.moodValue -= 10;
-            StartCoroutine(CustomerVanishVfx());
-            StartCoroutine(DestroyCustomer());
+            AngryFace();
         }
 
         DestroyObjectInHand();
@@ -237,10 +230,22 @@ public class Customer : MonoBehaviour
     private IEnumerator CustomerVanishVfx()
     {
         dissappearEffect.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
         GameObject.Find("Head").gameObject.SetActive(false);
         GameObject.Find("Body").gameObject.SetActive(false);
         GameObject.Find("talk_bubble").gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.02f);
+    }
+
+    public void AngryFace() 
+    {
+        Debug.Log("Mutsuz surat");
+        angryFace.gameObject.SetActive(true);
+        int randomIndex = Random.Range(0, angrySounds.Length); // Rastgele bir index seç
+        audioSource.PlayOneShot(angrySounds[randomIndex]); // Seçilen sesi oynat
+        angryFace.SetActive(true);
+        progressBarRatio.moodValue -= 10;
+        StartCoroutine(CustomerVanishVfx());
+        StartCoroutine(DestroyCustomer());
     }
 
 }

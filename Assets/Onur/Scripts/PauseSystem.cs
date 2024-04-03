@@ -9,12 +9,14 @@ public class PauseSystem : MonoBehaviour
     private GameObject timer;
     public GameObject pausePanel;
     private FirstPersonLook firstPersonLook;
+    private GameObject date;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = GameObject.Find("TimerControl");
         firstPersonLook = GameObject.Find("First Person Camera").GetComponent<FirstPersonLook>();
+        date = GameObject.Find("DatePanel");
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class PauseSystem : MonoBehaviour
         timer.SetActive(false);
         moodBar.SetActive(false);
         pausePanel.SetActive(true);
+        date.SetActive(false);
         isPaused = true;
         firstPersonLook.enabled = false;
     }
@@ -46,6 +49,7 @@ public class PauseSystem : MonoBehaviour
         Time.timeScale = 1;
         timer.SetActive(true);
         moodBar.SetActive(true);
+        date.SetActive(true);
         pausePanel.SetActive(false);
         isPaused = false;
         firstPersonLook.enabled = true;

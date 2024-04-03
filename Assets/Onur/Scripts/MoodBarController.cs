@@ -13,6 +13,9 @@ public class MoodBarController : MonoBehaviour
     // Kedinin hýzý
     public float kediHizi = 5f;
 
+    public GameObject happyCat;
+    public GameObject AngryCat;
+
     private void Start()
     {
         // Bar'ýn RectTransform bileþenini al
@@ -28,12 +31,23 @@ public class MoodBarController : MonoBehaviour
 
     private void Update()
     {
-        // Mood deðerini oyun içinde güncelle
-        // Burada mood deðerinin nasýl güncelleneceði ile ilgili kodlarý ekleyin
-        // Örneðin:
-        // moodValue = <yeni_mood_degeri>;
-        // veya
-        // moodValue += Time.deltaTime * <mood_degisim_hizi>;
+        if(moodValue <= 30) 
+        {
+            AngryCat.SetActive(true);
+        }
+        else 
+        {
+            AngryCat.SetActive(false);
+        }
+
+        if(moodValue >= 70) 
+        {
+            happyCat.SetActive(true);
+        }
+        else 
+        {
+            happyCat.SetActive(false);
+        }
 
         // Kedi pozisyonunu güncelle
         UpdateKediPosition();
