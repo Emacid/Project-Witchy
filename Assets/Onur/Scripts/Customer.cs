@@ -22,6 +22,14 @@ public class Customer : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip PopClip;
+    public AudioClip[] angrySounds;
+    public AudioClip corretSound;
+    [SerializeField]
+    private GameObject happyFace;
+    [SerializeField]
+    private GameObject angryFace;
+    [SerializeField]
+    private GameObject dissappearEffect;
 
     void Start()
     {
@@ -30,7 +38,6 @@ public class Customer : MonoBehaviour
         StartCoroutine(PopClipPlay());
 
         audioSource = GetComponent<AudioSource>();
-
         craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
 
         progressBarRatio = GameObject.Find("MoodBar_Adjuster").GetComponent<ProgressBarRatio>();
@@ -119,8 +126,11 @@ public class Customer : MonoBehaviour
                     foundDesiredItem = true;
                     Debug.Log("Mutlu surat");
                     progressBarRatio.moodValue += 10;
+                    audioSource.PlayOneShot(corretSound);
                     DestroyObjectInHand();
-                    // Mutlu surat ekle
+                    happyFace.gameObject.SetActive(true);
+                    StartCoroutine(CustomerVanishVfx());
+                    StartCoroutine(DestroyCustomer());
                     return;
                 }
             }
@@ -129,8 +139,13 @@ public class Customer : MonoBehaviour
         if (!foundDesiredItem && itemSocket.transform.childCount >= 1)
         {
             Debug.Log("Mutsuz surat");
-            // Mutsuz surat ekle
+            angryFace.gameObject.SetActive(true);
+            int randomIndex = Random.Range(0, angrySounds.Length); // Rastgele bir index seç
+            audioSource.PlayOneShot(angrySounds[randomIndex]); // Seçilen sesi oynat
+            angryFace.SetActive(true);
             progressBarRatio.moodValue -= 10;
+            StartCoroutine(CustomerVanishVfx());
+            StartCoroutine(DestroyCustomer());
         }
 
         DestroyObjectInHand();
@@ -212,6 +227,20 @@ public class Customer : MonoBehaviour
     {
         yield return new WaitForSeconds(waitBeforeTalkSoundActivation);
         audioSource.PlayOneShot(PopClip);
+    }
+
+    private IEnumerator DestroyCustomer()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+    }
+    private IEnumerator CustomerVanishVfx()
+    {
+        dissappearEffect.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        GameObject.Find("Head").gameObject.SetActive(false);
+        GameObject.Find("Body").gameObject.SetActive(false);
+        GameObject.Find("talk_bubble").gameObject.SetActive(false);
     }
 
 }
