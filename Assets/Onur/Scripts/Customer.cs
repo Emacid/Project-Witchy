@@ -9,7 +9,7 @@ public class Customer : MonoBehaviour
     public Sprite[] headSprites; // Kafa sprite'larýnýn dizisi
     public Sprite[] bodySprites; // Vücut sprite'larýnýn dizisi
     public int customerID = 0;
-    private string DESIRED_ITEM_TAG = string.Empty;
+    private string[] DESIRED_ITEM_TAGS; // Desired item tag'larýn dizisi
     public TMP_Text textObject;
     public string customerText = string.Empty;
     private GameObject itemSocket;
@@ -27,7 +27,7 @@ public class Customer : MonoBehaviour
     {
 
         StartCoroutine(ActivateTalkBubble());
-        StartCoroutine(PopClipPlay()); 
+        StartCoroutine(PopClipPlay());
 
         audioSource = GetComponent<AudioSource>();
 
@@ -81,7 +81,7 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
-        
+
         if (inInteractableArea && Input.GetKeyDown(KeyCode.E))
         {
             CheckDesiredItem();
@@ -110,15 +110,19 @@ public class Customer : MonoBehaviour
     {
         bool foundDesiredItem = false;
 
-        foreach (Transform child in itemSocket.transform)
+        foreach (string tag in DESIRED_ITEM_TAGS)
         {
-            if (child.CompareTag(DESIRED_ITEM_TAG))
+            foreach (Transform child in itemSocket.transform)
             {
-                foundDesiredItem = true;
-                Debug.Log("Mutlu surat");
-                progressBarRatio.moodValue += 10;
-                // Mutlu surat ekle
-                break;
+                if (child.CompareTag(tag))
+                {
+                    foundDesiredItem = true;
+                    Debug.Log("Mutlu surat");
+                    progressBarRatio.moodValue += 10;
+                    DestroyObjectInHand();
+                    // Mutlu surat ekle
+                    return;
+                }
             }
         }
 
@@ -130,8 +134,7 @@ public class Customer : MonoBehaviour
         }
 
         DestroyObjectInHand();
-        Debug.Log(DESIRED_ITEM_TAG + " yok oldu");
-
+        Debug.Log("Herhangi bir istenilen nesne yok");
         // Oyuncuyu efektle gönder
     }
 
@@ -140,22 +143,21 @@ public class Customer : MonoBehaviour
         switch (customerID)
         {
             case 0:
-                Debug.Log("I want Pilates Ball!");
-                DESIRED_ITEM_TAG = "PilatesBall";
+                Debug.Log("I want bira þiþesi / peluþ!");
+                DESIRED_ITEM_TAGS = new string[] { "Beer", "Toothless" };
                 break;
             case 1:
-                Debug.Log("I want Balloon!");
-                DESIRED_ITEM_TAG = "Balloon";
+                Debug.Log("Third Eye / healing potion / Gong");
+                DESIRED_ITEM_TAGS = new string[] { "Gong", "HealingPotion", "TheThirdEye" };
                 break;
             case 2:
-                Debug.Log("nothingness");
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
                 break;
-            case 3:
-                Debug.Log("nothingness");
-                break;
+            // Diðer case'ler için gerekli etiketleri ekleyin
             default:
                 Debug.LogWarning("Unknown ID for Customer.");
-                return;
+                break;
         }
     }
 
@@ -168,7 +170,7 @@ public class Customer : MonoBehaviour
         craftingSystemScript.isItemInHandFinal = false;
     }
 
-    private IEnumerator ActivateTalkBubble() 
+    private IEnumerator ActivateTalkBubble()
     {
         yield return new WaitForSeconds(waitBeforeTalkBubbleActivation);
         talkBubbleObject.gameObject.SetActive(true);

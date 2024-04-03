@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 7348568826313078308}
   - component: {fileID: 4424121659722044485}
   m_Layer: 0
-  m_Name: Customer_Base
+  m_Name: Customer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,10 +404,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 62b69d8aca5dd2e4c95dc8ae9f0b3a98, type: 3}
   - {fileID: 21300000, guid: 082bb3aa806ddaf42a775e55495a5281, type: 3}
   - {fileID: 21300000, guid: f834f190e1832504184233c3467de273, type: 3}
-  customerID: 0
+  customerID: 2
   textObject: {fileID: 2972921268965049650}
-  customerText: 'I see nightmares every single night. Couldn'' get a wink of sleep.
-    You got something? '
+  customerText: My husband comes home very late in these days. I think he's cheating
+    on me!
   inInteractableArea: 0
   waitBeforeTalkBubbleActivation: 3.5
   waitBeforeTalkSoundActivation: 3

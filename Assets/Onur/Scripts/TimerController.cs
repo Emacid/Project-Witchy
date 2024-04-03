@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class TimerController : MonoBehaviour
 {
-    public Image timerRadial;
+    private Image timerRadial;
     float timeRemaining;
     public float maxTime = 5.0f;
-    public Transform timerLine;
+    private Transform timerLine;
 
     // Baþlangýç konumlarý için bir Dictionary kullanacaðýz
     Dictionary<Transform, Vector3> initialPositions = new Dictionary<Transform, Vector3>();
@@ -16,6 +16,9 @@ public class TimerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timerRadial = GameObject.Find("Timer").GetComponent<Image>();
+        timerLine = GameObject.Find("TimerLinePivot").GetComponent<Transform>();
+
         timeRemaining = maxTime;
 
         // Her nesnenin baþlangýç konumunu kaydet
@@ -23,6 +26,9 @@ public class TimerController : MonoBehaviour
         {
             initialPositions[child] = child.position;
         }
+        
+        TimeReset();
+
     }
 
     // Update is called once per frame
@@ -42,7 +48,7 @@ public class TimerController : MonoBehaviour
             Debug.Log("ZAMAN DOLDU! ÖLDÜN!");
         }
 
-        // K tuþuna basýldýðýnda
+       /* // K tuþuna basýldýðýnda
         if (Input.GetKeyDown(KeyCode.K))
         {
             // Her nesneyi baþlangýç konumuna geri döndür
@@ -53,6 +59,19 @@ public class TimerController : MonoBehaviour
 
             // Zamaný sýfýrla
             timeRemaining = maxTime;
-        }
+        } */
     }
+
+    private void TimeReset() 
+    {
+        // Her nesneyi baþlangýç konumuna geri döndür
+        foreach (KeyValuePair<Transform, Vector3> pair in initialPositions)
+        {
+            pair.Key.position = pair.Value;
+        }
+
+        // Zamaný sýfýrla
+        timeRemaining = maxTime;
+    }
+
 }
