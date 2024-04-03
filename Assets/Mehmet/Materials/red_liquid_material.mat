@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: writing_material
+  m_Name: red_liquid_material
   m_Shader: {fileID: 4800000, guid: 7633a2fd8a3bed44791c9e952ff86e5d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -33,6 +33,7 @@ Material:
   - _MK_LIGHT_BANDED
   - _MK_OUTLINE_HULL_CLIP
   - _MK_RECEIVE_SHADOWS
+  - _MK_RIM_DEFAULT
   - _MK_SPECULAR_ISOTROPIC
   - _MK_VERTEX_ANIMATION_STUTTER
   - _MK_WRAPPED_DIFFUSE
@@ -49,7 +50,7 @@ Material:
     IGNOREPROJECTOR: False
     RenderType: Opaque
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _OutlineData
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -279,7 +280,7 @@ Material:
     - _LightTransmissionIntensity: 1
     - _LightTransmissionSmoothness: 0.5
     - _LightTransmissionThresholdOffset: 0.25
-    - _Metallic: 0
+    - _Metallic: 0.345
     - _NormalMapIntensity: 1
     - _OcclusionMapIntensity: 1
     - _OcclusionStrength: 1
@@ -289,21 +290,21 @@ Material:
     - _OutlineFadeMax: 2
     - _OutlineFadeMin: 0.25
     - _OutlineNoise: 0
-    - _OutlineSize: 0
+    - _OutlineSize: 10
     - _OutlineTab: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RenderFace: 2
     - _RenderPriority: 0
-    - _Rim: 0
+    - _Rim: 1
     - _RimSize: 3.47
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
     - _Roughness: 0.5
     - _Saturation: 1
     - _SketchMapScale: 1
-    - _Smoothness: 0
+    - _Smoothness: 0.628
     - _SmoothnessTextureChannel: 0
     - _Specular: 1
     - _SpecularHighlights: 1
@@ -332,9 +333,9 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _AlbedoColor: {r: 0, g: 0, b: 0, a: 1}
+    - _AlbedoColor: {r: 0.6528301, g: 0.1367248, b: 0.19365716, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.6528301, g: 0.13672477, b: 0.19365713, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
