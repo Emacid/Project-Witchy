@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Cauldron : MonoBehaviour
@@ -8,12 +9,15 @@ public class Cauldron : MonoBehaviour
     private GameObject itemSocket;
     private Item itemInHand = null;
     private CraftingSystem craftingSystemScript;
+    [SerializeField]
+    private GameObject item_discard_vfx;
 
     // Start is called before the first frame update
     void Start()
     {
         itemSocket = GameObject.Find("ItemSocket");
         craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
+        //item_discard_vfx = GameObject.Find("item_discard_vfx").GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -21,6 +25,7 @@ public class Cauldron : MonoBehaviour
     {
        if(canDestroyItem && Input.GetKeyDown(KeyCode.E)) 
         {
+           StartCoroutine(PlayParticles());
            DestroyObjectInHand();
            craftingSystemScript.isItemInHandFinal = false;
         }
@@ -45,6 +50,14 @@ public class Cauldron : MonoBehaviour
          {
             Destroy(child.gameObject);
          }
+
+     }
+
+     private IEnumerator PlayParticles() 
+     {
+        item_discard_vfx.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        item_discard_vfx.SetActive(false);
      }
 
     }

@@ -154,6 +154,38 @@ public class Customer : MonoBehaviour
                 Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
                 DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
                 break;
+            case 3:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 4:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 5:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 6:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 7:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 8:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 9:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
+            case 10:
+                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                break;
             // Diðer case'ler için gerekli etiketleri ekleyin
             default:
                 Debug.LogWarning("Unknown ID for Customer.");

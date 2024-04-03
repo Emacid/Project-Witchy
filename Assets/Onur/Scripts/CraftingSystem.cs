@@ -25,6 +25,9 @@ public class CraftingSystem : MonoBehaviour
     public GameObject craftingInfoText;
     public AudioSource audioSource;
     public AudioClip errorSound;
+    public AudioClip craftSound;
+
+    public GameObject craftParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -130,6 +133,8 @@ public class CraftingSystem : MonoBehaviour
                     childTransform.position = craftingSocket_2.transform.position;
                     id_2 = childTransform.GetComponent<Item>().ID;
                     spawn_id = id_1 + id_2;
+                    audioSource.PlayOneShot(craftSound);
+                    craftParticle.SetActive(true);
                     FinalProduct(spawn_id);
                 }
 
