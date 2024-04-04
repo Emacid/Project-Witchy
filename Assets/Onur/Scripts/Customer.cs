@@ -8,10 +8,12 @@ public class Customer : MonoBehaviour
 {
     public Sprite[] headSprites; // Kafa sprite'larýnýn dizisi
     public Sprite[] bodySprites; // Vücut sprite'larýnýn dizisi
+
     public int customerID = 0;
     private string[] DESIRED_ITEM_TAGS; // Desired item tag'larýn dizisi
     public TMP_Text textObject;
     public string customerText = string.Empty;
+
     private GameObject itemSocket;
     public bool inInteractableArea = false;
     private ProgressBarRatio progressBarRatio;
@@ -20,10 +22,15 @@ public class Customer : MonoBehaviour
     public float waitBeforeTalkBubbleActivation = 2.5f;
     public float waitBeforeTalkSoundActivation = 2.5f;
 
+    private StressReceiver stressReceiver;
+    private Animator notCraftedTextAnim;
+
     private AudioSource audioSource;
     public AudioClip PopClip;
     public AudioClip[] angrySounds;
     public AudioClip corretSound;
+    public AudioClip poofSound;
+    public AudioClip errorSound;
     [SerializeField]
     private GameObject happyFace;
     [SerializeField]
@@ -39,8 +46,9 @@ public class Customer : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         craftingSystemScript = GameObject.Find("CraftingSystem").GetComponent<CraftingSystem>();
-
+        stressReceiver = GameObject.Find("First Person Camera").GetComponent<StressReceiver>();
         progressBarRatio = GameObject.Find("MoodBar_Adjuster").GetComponent<ProgressBarRatio>();
+        notCraftedTextAnim = GameObject.Find("NotCraftedText").GetComponent<Animator>();
 
         textObject.text = customerText;
         itemSocket = GameObject.Find("ItemSocket");
@@ -115,8 +123,18 @@ public class Customer : MonoBehaviour
 
     private void CheckDesiredItem()
     {
-        bool foundDesiredItem = false;
+        // Eldeki nesnenin kontrolü
+        if (!craftingSystemScript.isItemInHandFinal)
+        {
+            Debug.Log("Bu item final deðildir!");
+            notCraftedTextAnim.SetTrigger("NotCraftedTextTrigger");
+            audioSource.PlayOneShot(errorSound);
+            stressReceiver.InduceStress(0.25f);
+            return;
+        }
 
+        // Ýstenilen itemin kontrolü
+        bool foundDesiredItem = false;
         foreach (string tag in DESIRED_ITEM_TAGS)
         {
             foreach (Transform child in itemSocket.transform)
@@ -145,6 +163,7 @@ public class Customer : MonoBehaviour
         Debug.Log("Herhangi bir istenilen nesne yok");
         // Oyuncuyu efektle gönder
     }
+
 
     private void SetCustomerData()
     {
@@ -229,10 +248,12 @@ public class Customer : MonoBehaviour
     }
     private IEnumerator CustomerVanishVfx()
     {
+        audioSource.PlayOneShot(poofSound);
         dissappearEffect.gameObject.SetActive(true);
         GameObject.Find("Head").gameObject.SetActive(false);
         GameObject.Find("Body").gameObject.SetActive(false);
         GameObject.Find("talk_bubble").gameObject.SetActive(false);
+        stressReceiver.InduceStress(0.08f);
         yield return new WaitForSeconds(0.02f);
     }
 
