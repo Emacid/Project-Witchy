@@ -194,8 +194,8 @@ public class Customer : MonoBehaviour
                 DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
                 break;
             case 6:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("Slingshot"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Slingshot" };
                 break;
             case 7:
                 Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
