@@ -449,44 +449,44 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -1427283469552433778, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
-    value: {fileID: 325596552}
-  - key: {fileID: 333745929504753815, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
-    value: {fileID: 1727852148}
-  - key: {fileID: -6202408398538192652, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
-    value: {fileID: 442448124}
-  - key: {fileID: -3257066922986306083, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
-    value: {fileID: 1205429401}
-  - key: {fileID: -1524105418537172954, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
-    value: {fileID: 1188531572}
-  - key: {fileID: -1566344103783186332, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 5863458872279675136, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 1961956822}
-  - key: {fileID: -1604904465966639575, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 4435369045379730971, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 887761280}
-  - key: {fileID: -8402584953745223746, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
-    value: {fileID: 1865957376}
-  - key: {fileID: -4960952038313477641, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: -3914186631077531109, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 428846682}
-  - key: {fileID: 3690549896125134176, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: -1048722554267143108, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+    value: {fileID: 325596552}
+  - key: {fileID: 9037936172102673791, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+    value: {fileID: 1727852148}
+  - key: {fileID: -8410750537837689048, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+    value: {fileID: 442448124}
+  - key: {fileID: 858142194219949547, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+    value: {fileID: 1205429401}
+  - key: {fileID: 6618141750429159853, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+    value: {fileID: 1188531572}
+  - key: {fileID: 3876173288608488443, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 1137926408}
-  - key: {fileID: 4118008887865037548, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 4508005961120854249, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 201924378}
-  - key: {fileID: 8050189851751315470, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: -6309474488337619288, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 379158676}
-  - key: {fileID: 346126535555765579, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 6358263531814439926, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 1101854509}
-  - key: {fileID: 3209718298067699358, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 4233717761221522454, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 1949526685}
-  - key: {fileID: 5585121573958717502, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: -8428577991708668839, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 984881110}
-  - key: {fileID: 2696986746519728283, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 760592837941402366, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 122295573}
-  - key: {fileID: -5174340561597978364, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 8370831698081034563, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 664944915}
-  - key: {fileID: 1541682244461347891, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: 6129661149605923475, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 1758774194}
-  - key: {fileID: -3119444603947642398, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+  - key: {fileID: -3519852377082437581, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
     value: {fileID: 32407649}
+  - key: {fileID: 7586701638148484492, guid: 98169a622f2dbb3448a6edbdfbf735a7, type: 2}
+    value: {fileID: 1865957376}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &199037003
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 0
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3303,7 +3303,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
