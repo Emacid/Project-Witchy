@@ -14,10 +14,23 @@ public class TutorialScript : MonoBehaviour
         StartCoroutine(ChangeLevel());
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) 
+        {
+            ChangeLevelFazt();
+        }
+    }
     private IEnumerator ChangeLevel()
     {
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(1);
     }
+
+    private void ChangeLevelFazt()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 
 }
