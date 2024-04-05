@@ -10,7 +10,7 @@ public class Billboarding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        theCam = Camera.main; 
+        theCam = GameObject.Find("First Person Camera").GetComponent<Camera>();
     }
 
     // Update is called once per frame

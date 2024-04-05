@@ -8221,6 +8221,8 @@ MonoBehaviour:
   fadeIn: {fileID: 1748228938}
   musicController: {fileID: 2034141082}
   fadeoutCinem: {fileID: 398610945}
+  mainCamera: {fileID: 2026574542}
+  fadeDuration: 2
 --- !u!4 &672610925
 Transform:
   m_ObjectHideFlags: 0
@@ -22739,7 +22741,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1441877047}
   - component: {fileID: 1441877046}
-  - component: {fileID: 1441877045}
   - component: {fileID: 1441877044}
   - component: {fileID: 1441877043}
   m_Layer: 0
@@ -22814,14 +22815,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1441877045
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441877042}
-  m_Enabled: 1
 --- !u!20 &1441877046
 Camera:
   m_ObjectHideFlags: 0
@@ -32077,7 +32070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1838133232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33164,6 +33157,11 @@ PrefabInstance:
     - target: {fileID: 4207293392497186, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20437472682476688, guid: 11aaea5348574644a9eb4f4504fcce3f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23087463268523072, guid: 11aaea5348574644a9eb4f4504fcce3f,
         type: 3}
@@ -38616,7 +38614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba5cc246f794ee48a87400c994675d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 3
+  interactDistance: 1.5
   interactLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -38649,6 +38647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec72980442fddac4d86e75ab24b4d027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &2026574542 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20437472682476688, guid: 11aaea5348574644a9eb4f4504fcce3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1970639539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030542965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8435777917589967891, guid: 5e349245255f41f4bac765c9e7ea1e87,
@@ -38714,7 +38718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &2034141083
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38727,7 +38731,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8389c8e2b35e773448ef161074d2216a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -38833,7 +38837,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034141082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a345e2e244124f743aa080c1fa374773, type: 3}
   m_Name: 
