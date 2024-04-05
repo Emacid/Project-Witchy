@@ -25,7 +25,8 @@ public class CraftingSystem : MonoBehaviour
     public GameObject craftingInfoText;
     public AudioSource audioSource;
     public AudioClip errorSound;
-    public AudioClip craftSound;
+    //public AudioClip craftSound;
+    public AudioClip putSound;
 
     public GameObject craftParticle;
 
@@ -104,6 +105,7 @@ public class CraftingSystem : MonoBehaviour
                 // itemSocket'in kendisini geç, sadece alt çocuklarla ilgilen
                 if (childTransform != itemSocket.transform && childTransform.parent == itemSocket.transform)
                 {
+                    audioSource.PlayOneShot(putSound);
                     childTransform.SetParent(craftingSocket_1.transform, false);
                     childTransform.position = craftingSocket_1.transform.position;
                     childTransform.GetComponent<Billboarding>().enabled = true;
@@ -133,7 +135,7 @@ public class CraftingSystem : MonoBehaviour
                     childTransform.position = craftingSocket_2.transform.position;
                     id_2 = childTransform.GetComponent<Item>().ID;
                     spawn_id = id_1 + id_2;
-                    audioSource.PlayOneShot(craftSound);
+                    //audioSource.PlayOneShot(craftSound);
                     craftParticle.SetActive(true);
                     FinalProduct(spawn_id);
                 }
