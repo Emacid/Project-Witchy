@@ -18,7 +18,7 @@ public class Outline : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // isLooking durumu deðiþtiðinde
         if (isLooking != wasLooking)
@@ -37,7 +37,7 @@ public class Outline : MonoBehaviour
             }
 
             wasLooking = isLooking; // Önceki durumu güncelle
-            //DAMN
         }
     }
+
 }
