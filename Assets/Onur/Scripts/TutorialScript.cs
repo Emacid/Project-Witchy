@@ -24,12 +24,12 @@ public class TutorialScript : MonoBehaviour
     private IEnumerator ChangeLevel()
     {
         yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     private void ChangeLevelFazt()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
 
