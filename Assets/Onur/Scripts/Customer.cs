@@ -199,7 +199,7 @@ public class Customer : MonoBehaviour
                 break;
             case 7:
                 Debug.Log("calziyum / Ýzkelet pozteri ve yerden ölü kaldýrma izkirizi, magic zcroll"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Calcium", "SkeletalSystemPoster", "RaiseDeadPotion", "MagicScroll" };
+                DESIRED_ITEM_TAGS = new string[] { "Calcium", "SkeletalSystemPoster", "RaiseDeadPotion", "MagicScroll", "RaiseDeadPotion" };
                 break;
             case 8:
                 Debug.Log("PegLeg / GlassHeels / Cloak / Necklace / EyePatch / SunGlasses / AluminiumFoil / Helmet / Camouflage/ Stethoscope"); // Ýki etiketi de kontrol ediyoruz

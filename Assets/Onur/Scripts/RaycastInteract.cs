@@ -110,13 +110,19 @@ public class RaycastInteract : MonoBehaviour
                 itemScript.isPickable = false;
             }
 
-            outlineOfObject = lastHitObject.GetComponent<Outline>(); // outlineOfObject'i sýfýrla
+            outlineOfObject = lastHitObject.GetComponent<Outline>();
             if (outlineOfObject != null)
             {
-                outlineOfObject.isLooking = false; // outlineOfObject'i sýfýrla
+                // outlineOfObject'i sýfýrla
+                outlineOfObject.isLooking = false;
             }
 
             lastHitObject = null;
+        }
+        else if (outlineOfObject != null) // Eðer lastHitObject null ise, outlineOfObject'i sýfýrla
+        {
+            outlineOfObject.isLooking = false;
+            outlineOfObject = null;
         }
     }
 }
