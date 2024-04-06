@@ -225,6 +225,18 @@ public class Customer : MonoBehaviour
                 Debug.Log("Ayrýlýk!"); // Ýki etiketi de kontrol ediyoruz
                 DESIRED_ITEM_TAGS = new string[] { "GlassHeels", "Diamond", "Mirror", "Carnivorous", "Necklace" };
                 break;
+            case 14:
+                Debug.Log("Komþum vampir!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Mirror", "BloodBag", "Garlic", "Fireball", "Nightstick", "Slingshot" };
+                break;
+            case 15:
+                Debug.Log("Lordz towera sýzma!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Camouflage", "Ivy", "PogoStick", "SunGlasses", "EyePatch", "Cloak", "Helmet" };
+                break;
+            case 16:
+                Debug.Log("piknik!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "BurnCream", "Garlic", "Basketball", "SunGlasses", "Balloon", "Kite", "PogoStick", "OrigamiFrog", "Beer", "Slingshot", "DragonEgg" };
+                break;
             // Diðer case'ler için gerekli etiketleri ekleyin
             default:
                 Debug.LogWarning("Unknown ID for Customer.");
