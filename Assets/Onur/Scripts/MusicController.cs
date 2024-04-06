@@ -7,6 +7,7 @@ public class MusicController : MonoBehaviour
     private AudioSource musicSource;
     private bool fadingOut = false;
     public GameObject fadeout;
+    public bool endTheScene = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +19,11 @@ public class MusicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (endTheScene)
         {
             fadingOut = true;
             fadeout.SetActive(true);
-            StartCoroutine(FadeOutMusic(5f)); // 2 saniyede fade out yapmak için
+            StartCoroutine(FadeOutMusic(9.5f)); // 2 saniyede fade out yapmak için
         }
     }
 

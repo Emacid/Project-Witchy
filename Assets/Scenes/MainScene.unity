@@ -27491,6 +27491,7 @@ GameObject:
   - component: {fileID: 1359483805}
   - component: {fileID: 1359483804}
   - component: {fileID: 1359483803}
+  - component: {fileID: 1359483806}
   m_Layer: 5
   m_Name: FadeOut
   m_TagString: Untagged
@@ -27576,6 +27577,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359483801}
   m_CullTransparentMesh: 1
+--- !u!114 &1359483806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359483801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ac691af2b9fb9459c4e2ea1afcfbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicController: {fileID: 2034141085}
 --- !u!4 &1368763274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6db1a5ecddc80fd4a939b384073b4bf1,
@@ -46538,6 +46552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeout: {fileID: 1359483801}
+  endTheScene: 0
 --- !u!1001 &2040511613
 PrefabInstance:
   m_ObjectHideFlags: 0
