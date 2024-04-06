@@ -7477,8 +7477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We deserve revenge after being in the slums for so many years. Go make
-    em' all frog !
+  m_text: "Now that you know the basics, it\u2019s time to put our plan into action."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ab1dad8021cf3b478aed79e38d65d83, type: 2}
   m_sharedMaterial: {fileID: 2690875173139948226, guid: 1ab1dad8021cf3b478aed79e38d65d83,
@@ -22915,7 +22914,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And this is your Craft Station. You will craft items here.
+  m_text: And this is your Workshop. You will craft items here.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ab1dad8021cf3b478aed79e38d65d83, type: 2}
   m_sharedMaterial: {fileID: 2690875173139948226, guid: 1ab1dad8021cf3b478aed79e38d65d83,
