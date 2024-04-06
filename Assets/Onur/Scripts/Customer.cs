@@ -211,7 +211,7 @@ public class Customer : MonoBehaviour
                 break;
             case 10:
                 Debug.Log("BloodBag / Camouflage / BurnCream / Cloak / SunGlasses / Calcium / Beer"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "BloodBag", "BurnCream", "Camouflage", "Acid", "Cloak", "SunGlasses", "Calicum", "Beer" };
+                DESIRED_ITEM_TAGS = new string[] { "BloodBag", "BurnCream", "Camouflage", "Acid", "Cloak", "SunGlasses", "Calcium", "Beer" };
                 break;
             case 11:
                 Debug.Log("BloodBag / Camouflage  / SunGlasses / Calcium / Beer"); // Ýki etiketi de kontrol ediyoruz

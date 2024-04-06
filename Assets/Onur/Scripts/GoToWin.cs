@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransitionToWinScreen : MonoBehaviour
+public class GoToWin : MonoBehaviour
 {
     public MusicController musicController;
 
@@ -22,8 +22,8 @@ public class TransitionToWinScreen : MonoBehaviour
     private IEnumerator ToWinScreen()
     {
         musicController.endTheScene = true;
-        yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene(4);
+        yield return new WaitForSeconds(8.5f);
+        SceneManager.LoadScene(5);
     }
 
 }

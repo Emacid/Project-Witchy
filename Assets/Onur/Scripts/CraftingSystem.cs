@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CraftingSystem : MonoBehaviour
@@ -16,6 +14,7 @@ public class CraftingSystem : MonoBehaviour
 
     public bool isItemInHandFinal = false;
     private bool canCraft = false;
+    private bool hasFinalItem = false;
     private GameObject itemSocket;
     private GameObject craftingSocket_1;
     private GameObject craftingSocket_2;
@@ -44,14 +43,14 @@ public class CraftingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canCraft)
+        if (canCraft)
         {
-            if (Input.GetKeyDown(KeyCode.E) && isItemInHandFinal) 
+            if (Input.GetKeyDown(KeyCode.E) && isItemInHandFinal && !hasFinalItem)
             {
                 audioSource.PlayOneShot(errorSound);
                 stressReceiver.InduceStress(0.3f);
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.E) && !hasFinalItem)
             {
                 InstantiateObjects();
                 DestroyObjectInHand();
@@ -61,7 +60,6 @@ public class CraftingSystem : MonoBehaviour
             {
                 holdTimer -= Time.deltaTime;
                 if (holdTimer < 0)
-                    //function thats being called=
                     CleanCraftingTable();
             }
             else
@@ -71,7 +69,7 @@ public class CraftingSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
             canCraft = true;
             craftingInfoText.gameObject.SetActive(true);
@@ -84,7 +82,7 @@ public class CraftingSystem : MonoBehaviour
         craftingInfoText.gameObject.SetActive(false);
     }
 
-    private void DestroyObjectInHand() 
+    private void DestroyObjectInHand()
     {
         foreach (Transform child in itemSocket.transform)
         {
@@ -92,17 +90,20 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
-    private void InstantiateObjects() 
+    private void InstantiateObjects()
     {
-        if (craftingSocket_1.transform.childCount == 0 && !isItemInHandFinal)
+        if (craftingSocket_Final.transform.childCount > 0)
         {
-            
+            audioSource.PlayOneShot(errorSound);
+            return;
+        }
+
+        if (craftingSocket_1.transform.childCount == 0 && !isItemInHandFinal && !hasFinalItem)
+        {
             Transform[] itemChildrenTransforms = itemSocket.GetComponentsInChildren<Transform>();
 
-            // itemSocket'in altýndaki tüm çocuklarýn transformunu al
             foreach (Transform childTransform in itemChildrenTransforms)
             {
-                // itemSocket'in kendisini geç, sadece alt çocuklarla ilgilen
                 if (childTransform != itemSocket.transform && childTransform.parent == itemSocket.transform)
                 {
                     audioSource.PlayOneShot(putSound);
@@ -111,24 +112,14 @@ public class CraftingSystem : MonoBehaviour
                     childTransform.GetComponent<Billboarding>().enabled = true;
                     id_1 = childTransform.GetComponent<Item>().ID;
                 }
-
             }
         }
-
-        /*else if (craftingSocket_1.transform.childCount == 0 && isItemInHandFinal)
+        else if (craftingSocket_2.transform.childCount == 0)
         {
-            stressReceiver.InduceStress(0.3f);
-        }*/
-
-        else if (craftingSocket_2.transform.childCount == 0) 
-        {
-            
             Transform[] itemChildrenTransforms = itemSocket.GetComponentsInChildren<Transform>();
 
-            // itemSocket'in altýndaki tüm çocuklarýn transformunu al
             foreach (Transform childTransform in itemChildrenTransforms)
             {
-                // itemSocket'in kendisini geç, sadece alt çocuklarla ilgilen
                 if (childTransform != itemSocket.transform && childTransform.parent == itemSocket.transform)
                 {
                     childTransform.SetParent(craftingSocket_2.transform, false);
@@ -139,12 +130,11 @@ public class CraftingSystem : MonoBehaviour
                     craftParticle.SetActive(true);
                     FinalProduct(spawn_id);
                 }
-
             }
         }
         else
         {
-            
+            audioSource.PlayOneShot(errorSound);
         }
     }
 
@@ -166,6 +156,7 @@ public class CraftingSystem : MonoBehaviour
         {
             Debug.Log("CraftingSocket_Final temizlendi!");
             CleanSocket(craftingSocket_Final);
+            hasFinalItem = false; // Yeni eklendi
         }
     }
 
@@ -196,6 +187,7 @@ public class CraftingSystem : MonoBehaviour
     private void FinalProduct(int spawn_id)
     {
         CleanIngredients();
+        hasFinalItem = true;
 
         GameObject newItem = null;
         if (spawnItemsDictionary.TryGetValue(spawn_id, out int itemIndex))
@@ -270,5 +262,4 @@ public class CraftingSystem : MonoBehaviour
         { 10954, 46 },
         { 2000, 47 }
     };
-
 }

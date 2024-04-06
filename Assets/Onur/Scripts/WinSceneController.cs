@@ -14,17 +14,17 @@ public class WinSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Eðer R tuþuna basýlýrsa
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // 2 numaralý sahneyi yükle
-            SceneManager.LoadScene(2);
+            
+            SceneManager.LoadScene(3);
         }
 
-        // Eðer ESC tuþuna basýlýrsa
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Oyunu kapat
+            
             Application.Quit();
         }
     }

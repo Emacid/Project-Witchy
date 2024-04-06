@@ -15,7 +15,7 @@ public class ProgressBarRatio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         moodBarController = GameObject.Find("MoodBar").GetComponent<MoodBarController>();
+        moodBarController = GameObject.Find("MoodBar").GetComponent<MoodBarController>();
     }
 
     // Update is called once per frame
@@ -23,25 +23,36 @@ public class ProgressBarRatio : MonoBehaviour
     {
         moodBarController.moodValue = moodValue;
 
-        if(moodValue <= 0) 
+        if (moodValue <= 0)
         {
             LostTheGame();
         }
 
-        else if(moodValue >= 100) 
+        else if (moodValue >= 100)
         {
             WonTheGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.F10) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)))
+        {
+            wonObject.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F11) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)))
+        {
+            lostObject.SetActive(true);
+        }
+
     }
 
-    private void LostTheGame() 
+    private void LostTheGame()
     {
-
+        lostObject.SetActive(true);
     }
 
-    private void WonTheGame() 
+    private void WonTheGame()
     {
-
+        wonObject.SetActive(true);
     }
 
 

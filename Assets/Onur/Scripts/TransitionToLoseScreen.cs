@@ -23,8 +23,8 @@ public class TransitionToLoseScreen : MonoBehaviour
     private IEnumerator ToLoseScreen() 
     {
         musicController.endTheScene = true;
-        yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene(2);
+        yield return new WaitForSeconds(8.5f);
+        SceneManager.LoadScene(4);
     }
 
 }
