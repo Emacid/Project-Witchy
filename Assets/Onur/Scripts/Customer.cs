@@ -170,48 +170,60 @@ public class Customer : MonoBehaviour
         switch (customerID)
         {
             case 0:
-                Debug.Log("I want bira þiþesi / peluþ!");
-                DESIRED_ITEM_TAGS = new string[] { "Beer", "Toothless" };
+                Debug.Log("I want bira þiþesi / peluþ!, eyepatch, pillz");
+                DESIRED_ITEM_TAGS = new string[] { "Beer", "Toothless", "EyePatch", "Pills", "HealingPotion" };
                 break;
             case 1:
                 Debug.Log("Third Eye / healing potion / Gong");
-                DESIRED_ITEM_TAGS = new string[] { "Gong", "HealingPotion", "TheThirdEye" };
+                DESIRED_ITEM_TAGS = new string[] { "Gong", "HealingPotion", "TheThirdEye", "EvilEye", "CrystalBall", "Beer" };
                 break;
             case 2:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("Nightstick / büyütec,pelerin / zehir,azit, kamuflaj, fireball, kriztalball"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Acid", "PoisonBottle", "MagnifyingGlass", "CrystalBall", "Camouflage", "Fireball" };
                 break;
             case 3:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("Helmet / ZlingZhot / MagicWand, zcroll, göz bandý tahta bacak, cloack, nightztick, kamuflaj"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Helmet", "Slingshot", "MagicWand", "MagicScroll", "EyePatch", "PegLeg", "Cloak", "Nightstick", "Camouflage" };
                 break;
             case 4:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("Toothless / Balloon / Kite, PogoStick, Basketball, OrigamiFrog"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Toothless", "Balloon", "Kite", "PogoStick", "Basketball", "OrigamiFrog" };
                 break;
             case 5:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("ejder garlic monzter beer bloodbag"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "DragonEgg", "Garlic", "AMonster", "Beer", "BloodBag" };
                 break;
             case 6:
-                Debug.Log("Slingshot"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Slingshot" };
+                Debug.Log("Slingshot, nightztick, azit, fireball, poizon, helmet, "); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Slingshot", "Nightstick", "PoisonBottle", "Acid", "FireBall", "Helmet", "MagicWand" };
                 break;
             case 7:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("calziyum / Ýzkelet pozteri ve yerden ölü kaldýrma izkirizi, magic zcroll"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Calcium", "SkeletalSystemPoster", "RaiseDeadPotion", "MagicScroll" };
                 break;
             case 8:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("PegLeg / GlassHeels / Cloak / Necklace / EyePatch / SunGlasses / AluminiumFoil / Helmet / Camouflage/ Stethoscope"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "PegLeg", "GlassHeels", "Cloak", "Necklace", "EyePatch", "SunGlasses", "AluminiumFoil", "Helmet", "Camouflage", "Stethoscope", "Diamond" };
                 break;
             case 9:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("Evil eye, third eye, gonggg,Nightstick"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "EvilEye", "TheThirdEye", "Gong", "Nightstick" };
                 break;
             case 10:
-                Debug.Log("Nightstick / Ýnsan yiyen bitki / zehir"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Carnivorous", "Acid" };
+                Debug.Log("BloodBag / Camouflage / BurnCream / Cloak / SunGlasses / Calcium / Beer"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "BloodBag", "BurnCream", "Camouflage", "Acid", "Cloak", "SunGlasses", "Calicum", "Beer" };
+                break;
+            case 11:
+                Debug.Log("BloodBag / Camouflage  / SunGlasses / Calcium / Beer"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Acid", "FireBall", "MagicScroll", "Slingshot", "PoisonBottle", "MagicWand", "Nightstick", "Soap", "Gasoline" };
+                break;
+            case 12:
+                Debug.Log("HERZEYY!!!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Calcium", "Stethoscope", "Camouflage", "Helmet", "DragonEgg", "Acid", "Ivy", "Gasoline", "Carnivorous", "RaiseDeadPotion", "HealingPotion", "Diamond", "PoisonBottle", "Mirror", "SkeletalSystemPoster", "AluminiumFoil", "WallPaint", "Beer", "OrigamiFrog", "MagicWand", "SunGlasses", "MagnifyingGlass", "EyePatch", "TheThirdEye", "Necklace", "FireBall", "CrystalBall", "MagicScroll", "EvilEye", "Pills", "Nightstick", "BloodBag", "Toothless", "Garlic", "Gong", "Kite", "AMonster", "Cloak", "Soap", "Trash", "BurnCream", "Glue", "GlassHeels", "PegLeg", "Slingshot", "Basketball", "Balloon", "PogoStick"};
+                break;
+            case 13:
+                Debug.Log("Ayrýlýk!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "GlassHeels", "Diamond", "Mirror", "Carnivorous", "Necklace" };
                 break;
             // Diðer case'ler için gerekli etiketleri ekleyin
             default:

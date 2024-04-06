@@ -29225,7 +29225,7 @@ GameObject:
   - component: {fileID: 7348568826313078308}
   - component: {fileID: 4424121659722044485}
   m_Layer: 0
-  m_Name: Tutorial_Customer_1
+  m_Name: Customer_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29279,12 +29279,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headSprites:
-  - {fileID: 21300000, guid: c940632c7e4405248a22f085eeea17ee, type: 3}
+  - {fileID: 21300000, guid: bcc087ff27a0b6f4e9b6d94c2581bea2, type: 3}
+  - {fileID: 21300000, guid: 5b608d12ddafb444d9bbeeb7c2c324f2, type: 3}
+  - {fileID: 21300000, guid: ffb3e0c27dfd85347bfa9164d0fc5dfa, type: 3}
+  - {fileID: 21300000, guid: b2927b39294ffcc43b4682a156653768, type: 3}
+  - {fileID: 21300000, guid: 4f3a29a46b17a024cb30a2abfc2f2a79, type: 3}
+  - {fileID: 21300000, guid: 6b7ed5011f8d1be4e8f2b573d3c33bad, type: 3}
+  - {fileID: 21300000, guid: ca5210cddfd18674b9fc3d767d21bd85, type: 3}
+  - {fileID: 21300000, guid: bce3f658bed0c1e429797a9e3c4d4036, type: 3}
+  - {fileID: 21300000, guid: dfcd90cca06b64f4aae8b0473c28793d, type: 3}
+  - {fileID: 21300000, guid: cb16f25b77bef6f4692f41a5c6db6d05, type: 3}
   bodySprites:
-  - {fileID: 21300000, guid: b943e38e2a645b44b83531af6874d11f, type: 3}
-  customerID: 6
+  - {fileID: 21300000, guid: de8e709879da650408d938f4b1f435c5, type: 3}
+  - {fileID: 21300000, guid: b15487ba30e6d0e4a9dd74ce39751efc, type: 3}
+  - {fileID: 21300000, guid: c5e114f26e7fd5844b21cc9574ca979f, type: 3}
+  - {fileID: 21300000, guid: 31e27cfb3bf8c564ca2f095de4a2b53b, type: 3}
+  - {fileID: 21300000, guid: 88ddec344a6f0ad48b3ab2407e077ee6, type: 3}
+  - {fileID: 21300000, guid: 1b6a65f73411c60448c2ce1b409dd11e, type: 3}
+  - {fileID: 21300000, guid: 3325e4c0a9d003f418c3fdb263668d72, type: 3}
+  - {fileID: 21300000, guid: 62b69d8aca5dd2e4c95dc8ae9f0b3a98, type: 3}
+  - {fileID: 21300000, guid: 082bb3aa806ddaf42a775e55495a5281, type: 3}
+  - {fileID: 21300000, guid: f834f190e1832504184233c3467de273, type: 3}
+  customerID: 11
   textObject: {fileID: 2972921268965049650}
-  customerText: Those damn kobolds stole my bow. I need to make them pay!
+  customerText: Rats! Rats! RAAATS!!!
   inInteractableArea: 0
   waitBeforeTalkBubbleActivation: 3.5
   waitBeforeTalkSoundActivation: 3
