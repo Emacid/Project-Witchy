@@ -29225,7 +29225,7 @@ GameObject:
   - component: {fileID: 7348568826313078308}
   - component: {fileID: 4424121659722044485}
   m_Layer: 0
-  m_Name: Customer_20
+  m_Name: Customer_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29300,10 +29300,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 62b69d8aca5dd2e4c95dc8ae9f0b3a98, type: 3}
   - {fileID: 21300000, guid: 082bb3aa806ddaf42a775e55495a5281, type: 3}
   - {fileID: 21300000, guid: f834f190e1832504184233c3467de273, type: 3}
-  customerID: 19
+  customerID: 11
   textObject: {fileID: 2972921268965049650}
-  customerText: My little brother says that he wants a gargoyle as a pet but I couldn't
-    find one. Got anything instead?
+  customerText: Rats! Rats! RAAATS!!!
   inInteractableArea: 0
   waitBeforeTalkBubbleActivation: 3.5
   waitBeforeTalkSoundActivation: 3

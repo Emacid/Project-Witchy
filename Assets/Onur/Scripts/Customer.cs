@@ -25,6 +25,7 @@ public class Customer : MonoBehaviour
     private StressReceiver stressReceiver;
     private Animator notCraftedTextAnim;
 
+
     private AudioSource audioSource;
     public AudioClip PopClip;
     public AudioClip[] angrySounds;
@@ -37,6 +38,8 @@ public class Customer : MonoBehaviour
     private GameObject angryFace;
     [SerializeField]
     private GameObject dissappearEffect;
+
+    private GameObject customerTextObject;
 
     void Start()
     {
@@ -178,100 +181,104 @@ public class Customer : MonoBehaviour
                 DESIRED_ITEM_TAGS = new string[] { "Gong", "HealingPotion", "TheThirdEye", "EvilEye", "CrystalBall", "Beer" };
                 break;
             case 2:
-                Debug.Log("Nightstick / büyütec,pelerin / zehir,azit, kamuflaj, fireball, kriztalball"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Nightstick / büyütec,pelerin / zehir,azit, kamuflaj, fireball, kriztalball");
                 DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Acid", "PoisonBottle", "MagnifyingGlass", "CrystalBall", "Camouflage", "FireBall" };
                 break;
             case 3:
-                Debug.Log("Helmet / ZlingZhot / MagicWand, zcroll, göz bandý tahta bacak, cloack, nightztick, kamuflaj"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Helmet / ZlingZhot / MagicWand, zcroll, göz bandý tahta bacak, cloack, nightztick, kamuflaj");
                 DESIRED_ITEM_TAGS = new string[] { "Helmet", "Slingshot", "MagicWand", "MagicScroll", "EyePatch", "PegLeg", "Cloak", "Nightstick", "Camouflage" };
                 break;
             case 4:
-                Debug.Log("Toothless / Balloon / Kite, PogoStick, Basketball, OrigamiFrog"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Toothless / Balloon / Kite, PogoStick, Basketball, OrigamiFrog");
                 DESIRED_ITEM_TAGS = new string[] { "Toothless", "Balloon", "Kite", "PogoStick", "Basketball", "OrigamiFrog" };
                 break;
             case 5:
-                Debug.Log("ejder garlic monzter beer bloodbag"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("ejder garlic monzter beer bloodbag");
                 DESIRED_ITEM_TAGS = new string[] { "DragonEgg", "Garlic", "AMonster", "Beer", "BloodBag" };
                 break;
             case 6:
-                Debug.Log("Slingshot, nightztick, azit, fireball, poizon, helmet, "); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Slingshot, nightztick, azit, fireball, poizon, helmet, ");
                 DESIRED_ITEM_TAGS = new string[] { "Slingshot", "Nightstick", "PoisonBottle", "Acid", "FireBall", "Helmet", "MagicWand" };
                 break;
             case 7:
-                Debug.Log("calziyum / Ýzkelet pozteri ve yerden ölü kaldýrma izkirizi, magic zcroll"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("calziyum / Ýzkelet pozteri ve yerden ölü kaldýrma izkirizi, magic zcroll");
                 DESIRED_ITEM_TAGS = new string[] { "Calcium", "SkeletalSystemPoster", "RaiseDeadPotion", "MagicScroll", "RaiseDeadPotion" };
                 break;
             case 8:
-                Debug.Log("PegLeg / GlassHeels / Cloak / Necklace / EyePatch / SunGlasses / AluminiumFoil / Helmet / Camouflage/ Stethoscope"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("PegLeg / GlassHeels / Cloak / Necklace / EyePatch / SunGlasses / AluminiumFoil / Helmet / Camouflage/ Stethoscope");
                 DESIRED_ITEM_TAGS = new string[] { "PegLeg", "GlassHeels", "Cloak", "Necklace", "EyePatch", "SunGlasses", "AluminiumFoil", "Helmet", "Camouflage", "Stethoscope", "Diamond" };
                 break;
             case 9:
-                Debug.Log("Evil eye, third eye, gonggg,Nightstick"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Evil eye, third eye, gonggg,Nightstick");
                 DESIRED_ITEM_TAGS = new string[] { "EvilEye", "TheThirdEye", "Gong", "Nightstick" };
                 break;
             case 10:
-                Debug.Log("BloodBag / Camouflage / BurnCream / Cloak / SunGlasses / Calcium / Beer"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "BloodBag", "BurnCream", "Camouflage", "Acid", "Cloak", "SunGlasses", "Calcium", "Beer" };
+                Debug.Log("BloodBag / Camouflage / BurnCream / Cloak / SunGlasses / Calcium / Beer");
+                DESIRED_ITEM_TAGS = new string[] { "BloodBag", "BurnCream", "Camouflage", "Acid", "Cloak", "SunGlasses", "Calcium", "Beer", "HealingPotion" };
                 break;
             case 11:
-                Debug.Log("FARELERRR!!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("FARELERRR!!");
                 DESIRED_ITEM_TAGS = new string[] { "Acid", "FireBall", "MagicScroll", "Slingshot", "PoisonBottle", "MagicWand", "Nightstick", "Soap", "Gasoline" };
                 break;
             case 12:
-                Debug.Log("HERZEYY!!!"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Calcium", "Stethoscope", "Camouflage", "Helmet", "DragonEgg", "Acid", "Ivy", "Gasoline", "Carnivorous", "RaiseDeadPotion", "HealingPotion", "Diamond", "PoisonBottle", "Mirror", "SkeletalSystemPoster", "AluminiumFoil", "WallPaint", "Beer", "OrigamiFrog", "MagicWand", "SunGlasses", "MagnifyingGlass", "EyePatch", "TheThirdEye", "Necklace", "FireBall", "CrystalBall", "MagicScroll", "EvilEye", "Pills", "Nightstick", "BloodBag", "Toothless", "Garlic", "Gong", "Kite", "AMonster", "Cloak", "Soap", "Trash", "BurnCream", "Glue", "GlassHeels", "PegLeg", "Slingshot", "Basketball", "Balloon", "PogoStick"};
+                Debug.Log("HERZEYY!!!");
+                DESIRED_ITEM_TAGS = new string[] { "Calcium", "Stethoscope", "Camouflage", "Helmet", "DragonEgg", "Acid", "Ivy", "Gasoline", "Carnivorous", "RaiseDeadPotion", "HealingPotion", "Diamond", "PoisonBottle", "Mirror", "SkeletalSystemPoster", "AluminiumFoil", "WallPaint", "Beer", "OrigamiFrog", "MagicWand", "SunGlasses", "MagnifyingGlass", "EyePatch", "TheThirdEye", "Necklace", "FireBall", "CrystalBall", "MagicScroll", "EvilEye", "Pills", "Nightstick", "BloodBag", "Toothless", "Garlic", "Gong", "Kite", "AMonster", "Cloak", "Soap", "Trash", "BurnCream", "Glue", "GlassHeels", "PegLeg", "Slingshot", "Basketball", "Balloon", "PogoStick" };
                 break;
             case 13:
-                Debug.Log("Ayrýlýk!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Ayrýlýk!");
                 DESIRED_ITEM_TAGS = new string[] { "GlassHeels", "Diamond", "Mirror", "Carnivorous", "Necklace" };
                 break;
             case 14:
-                Debug.Log("Komþum vampir!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Komþum vampir!");
                 DESIRED_ITEM_TAGS = new string[] { "Mirror", "BloodBag", "Garlic", "Fireball", "Nightstick", "Slingshot" };
                 break;
             case 15:
-                Debug.Log("Lordz towera sýzma!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Lordz towera sýzma!");
                 DESIRED_ITEM_TAGS = new string[] { "Camouflage", "Ivy", "PogoStick", "SunGlasses", "EyePatch", "Cloak", "Helmet" };
                 break;
             case 16:
-                Debug.Log("piknik!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("piknik!");
                 DESIRED_ITEM_TAGS = new string[] { "BurnCream", "Garlic", "Basketball", "SunGlasses", "Balloon", "Kite", "PogoStick", "OrigamiFrog", "Beer", "Slingshot", "DragonEgg" };
                 break;
             case 17:
-                Debug.Log("stars!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("stars!");
                 DESIRED_ITEM_TAGS = new string[] { "Cloak", "MagicScroll", "PogoStick", "MagnifyingGlass", "Balloon", "Ivy", "DragonEgg" };
                 break;
             case 18:
-                Debug.Log("invention!"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("invention!");
                 DESIRED_ITEM_TAGS = new string[] { "Gasoline", "Glue", "OrigamiFrog", "MagnifyingGlass", "SkeletalSystemPoster", "Kite", "PogoStick", "AluminiumFoil", "Beer", "PegLeg", "Slingshot" };
                 break;
             case 19:
-                Debug.Log("pet gargoyle bulamadým fikrini deðiþtircek baþka biþi!"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "AMonster", "DragonEgg", "Toothless", "OrigamiFrog", "RaiseDeadPotion" };
+                Debug.Log("pet gargoyle bulamadým fikrini deðiþtircek baþka biþi!");
+                DESIRED_ITEM_TAGS = new string[] { "AMonster", "DragonEgg", "Toothless", "OrigamiFrog", "RaiseDeadPotion", "Carnivorous" };
                 break;
             case 20:
-                Debug.Log("HELP DIYE BAGIRAN BIREY"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("HELP DIYE BAGIRAN BIREY");
                 DESIRED_ITEM_TAGS = new string[] { "HealingPotion", "BloodBag", "Glue", "Calcium", "Stethoscope", "RaiseDeadPotion", "EyePatch" };
                 break;
             case 21:
-                Debug.Log("Parlayan eþyalar lazým abiye"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "AluminiumFoil", "Diamond", "CrystalBall", "Mirror", "MagnifyingGlass", "GlassHeels", "Necklace" };
+                Debug.Log("Parlayan eþyalar lazým abiye");
+                DESIRED_ITEM_TAGS = new string[] { "AluminiumFoil", "Diamond", "CrystalBall", "Mirror", "MagnifyingGlass", "GlassHeels", "Necklace", "Helmet" };
                 break;
             case 22:
-                Debug.Log("Eþek þakasý yapacak eþya lazým! "); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Soap", "Glue", "Camouflage", "Gasoline", "Carnivorous", "AluminiumFoil", "BloodBag", "Gong" };
+                Debug.Log("Eþek þakasý yapacak eþya lazým! ");
+                DESIRED_ITEM_TAGS = new string[] { "Soap", "Glue", "Camouflage", "Gasoline", "Carnivorous", "AluminiumFoil", "BloodBag", "Gong", "Slingshot" };
                 break;
             case 23:
-                Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Train my Dragon! ");
                 DESIRED_ITEM_TAGS = new string[] { "Toothless" };
                 break;
             case 24:
-                Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Kulkedizi! ");
                 DESIRED_ITEM_TAGS = new string[] { "GlassHeels" };
                 break;
             case 25:
-                Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("Matrix! ");
                 DESIRED_ITEM_TAGS = new string[] { "Pills", "SunGlasses" };
+                break;
+            case 26:
+                Debug.Log("Tanrýlar onu benden aldý hüüüü! ");
+                DESIRED_ITEM_TAGS = new string[] { "RaiseDeadPotion", "Carnivorous", "Gasoline", "PoisonBottle", "Beer", "Acid" };
                 break;
             // Diðer case'ler için gerekli etiketleri ekleyin
             default:
@@ -317,7 +324,7 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(0.02f);
     }
 
-    public void AngryFace() 
+    public void AngryFace()
     {
         Debug.Log("Mutsuz surat");
         angryFace.gameObject.SetActive(true);
