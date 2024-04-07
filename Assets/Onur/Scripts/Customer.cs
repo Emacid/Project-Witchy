@@ -271,7 +271,7 @@ public class Customer : MonoBehaviour
                 break;
             case 25:
                 Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Pills" };
+                DESIRED_ITEM_TAGS = new string[] { "Pills", "SunGlasses" };
                 break;
             // Diðer case'ler için gerekli etiketleri ekleyin
             default:

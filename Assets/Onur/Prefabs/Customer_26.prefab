@@ -29302,7 +29302,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f834f190e1832504184233c3467de273, type: 3}
   customerID: 25
   textObject: {fileID: 2972921268965049650}
-  customerText: I don't like the idea that I'm not in control of my life.
+  customerText: What is real? How do you define 'real'? You have to free your mind
+    Eva.
   inInteractableArea: 0
   waitBeforeTalkBubbleActivation: 3.5
   waitBeforeTalkSoundActivation: 3
