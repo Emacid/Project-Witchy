@@ -188,7 +188,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2690875173139948226, guid: 1ab1dad8021cf3b478aed79e38d65d83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   _SortingLayerID: 0
   _SortingOrder: 0
   m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 0}
+  m_renderer: {fileID: 7620942575348251306}
   m_maskType: 0
 --- !u!1 &1093654094259037490
 GameObject:
@@ -29225,7 +29225,7 @@ GameObject:
   - component: {fileID: 7348568826313078308}
   - component: {fileID: 4424121659722044485}
   m_Layer: 0
-  m_Name: Customer_9
+  m_Name: Customer_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29300,10 +29300,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 62b69d8aca5dd2e4c95dc8ae9f0b3a98, type: 3}
   - {fileID: 21300000, guid: 082bb3aa806ddaf42a775e55495a5281, type: 3}
   - {fileID: 21300000, guid: f834f190e1832504184233c3467de273, type: 3}
-  customerID: 8
+  customerID: 25
   textObject: {fileID: 2972921268965049650}
-  customerText: I've been invited to the costume ball at the Lords Tower. I must
-    be the star of the show!
+  customerText: I don't like the idea that I'm not in control of my life.
   inInteractableArea: 0
   waitBeforeTalkBubbleActivation: 3.5
   waitBeforeTalkSoundActivation: 3

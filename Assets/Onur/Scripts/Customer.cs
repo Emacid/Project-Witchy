@@ -179,7 +179,7 @@ public class Customer : MonoBehaviour
                 break;
             case 2:
                 Debug.Log("Nightstick / büyütec,pelerin / zehir,azit, kamuflaj, fireball, kriztalball"); // Ýki etiketi de kontrol ediyoruz
-                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Acid", "PoisonBottle", "MagnifyingGlass", "CrystalBall", "Camouflage", "Fireball" };
+                DESIRED_ITEM_TAGS = new string[] { "Nightstick", "Acid", "PoisonBottle", "MagnifyingGlass", "CrystalBall", "Camouflage", "FireBall" };
                 break;
             case 3:
                 Debug.Log("Helmet / ZlingZhot / MagicWand, zcroll, göz bandý tahta bacak, cloack, nightztick, kamuflaj"); // Ýki etiketi de kontrol ediyoruz
@@ -214,7 +214,7 @@ public class Customer : MonoBehaviour
                 DESIRED_ITEM_TAGS = new string[] { "BloodBag", "BurnCream", "Camouflage", "Acid", "Cloak", "SunGlasses", "Calcium", "Beer" };
                 break;
             case 11:
-                Debug.Log("BloodBag / Camouflage  / SunGlasses / Calcium / Beer"); // Ýki etiketi de kontrol ediyoruz
+                Debug.Log("FARELERRR!!"); // Ýki etiketi de kontrol ediyoruz
                 DESIRED_ITEM_TAGS = new string[] { "Acid", "FireBall", "MagicScroll", "Slingshot", "PoisonBottle", "MagicWand", "Nightstick", "Soap", "Gasoline" };
                 break;
             case 12:
@@ -236,6 +236,42 @@ public class Customer : MonoBehaviour
             case 16:
                 Debug.Log("piknik!"); // Ýki etiketi de kontrol ediyoruz
                 DESIRED_ITEM_TAGS = new string[] { "BurnCream", "Garlic", "Basketball", "SunGlasses", "Balloon", "Kite", "PogoStick", "OrigamiFrog", "Beer", "Slingshot", "DragonEgg" };
+                break;
+            case 17:
+                Debug.Log("stars!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Cloak", "MagicScroll", "PogoStick", "MagnifyingGlass", "Balloon", "Ivy", "DragonEgg" };
+                break;
+            case 18:
+                Debug.Log("invention!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Gasoline", "Glue", "OrigamiFrog", "MagnifyingGlass", "SkeletalSystemPoster", "Kite", "PogoStick", "AluminiumFoil", "Beer", "PegLeg", "Slingshot" };
+                break;
+            case 19:
+                Debug.Log("pet gargoyle bulamadým fikrini deðiþtircek baþka biþi!"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "AMonster", "DragonEgg", "Toothless", "OrigamiFrog", "RaiseDeadPotion" };
+                break;
+            case 20:
+                Debug.Log("HELP DIYE BAGIRAN BIREY"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "HealingPotion", "BloodBag", "Glue", "Calcium", "Stethoscope", "RaiseDeadPotion", "EyePatch" };
+                break;
+            case 21:
+                Debug.Log("Parlayan eþyalar lazým abiye"); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "AluminiumFoil", "Diamond", "CrystalBall", "Mirror", "MagnifyingGlass", "GlassHeels", "Necklace" };
+                break;
+            case 22:
+                Debug.Log("Eþek þakasý yapacak eþya lazým! "); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Soap", "Glue", "Camouflage", "Gasoline", "Carnivorous", "AluminiumFoil", "BloodBag", "Gong" };
+                break;
+            case 23:
+                Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Toothless" };
+                break;
+            case 24:
+                Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "GlassHeels" };
+                break;
+            case 25:
+                Debug.Log("Train my Dragon! "); // Ýki etiketi de kontrol ediyoruz
+                DESIRED_ITEM_TAGS = new string[] { "Pills" };
                 break;
             // Diðer case'ler için gerekli etiketleri ekleyin
             default:
